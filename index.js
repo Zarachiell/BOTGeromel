@@ -24,13 +24,6 @@ con.connect(function (error) {
     }
 })
 
-/*con.connect(function (err) {
-    con.query("SELECT * FROM gearscore", function (err, result) {
-      if (err) throw err;
-      console.log(result);
-    });
-  });*/
-
 /**
  * Inicia o Bot e deixa em "Ready" como um listener e mostra no log que está funcionando.
  */
@@ -48,7 +41,7 @@ bot.on("message", function (message) {
     const gs = message.content.slice(prefix.lenght).split(' ');
 
     if (message.content.startsWith(`${prefix}addgs`) && gs[1].startsWith('<@')) {
-        con.query('INSERT INTO gearscore values(' + message.mentions.users.first().id + ",'" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ')');
+        con.query('INSERT INTO gearscore values(' + message.mentions.users.first().id+ ",'" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ')');
         message.channel.send(`GS e Classe ${gs[1]} ${gs[2]} ${gs[3]} ${gs[4]} ${gs[5]} ${gs[6]}`);
     }
     if (message.content.startsWith(`${prefix}addgs`) && !gs[1].startsWith('<@')) {
@@ -63,11 +56,10 @@ bot.on("message", function (message) {
         })
     }
     if (message.content.startsWith(`${prefix}gs`) && !gs[1].startsWith('<@')) {
-        con.query('SELECT id, classe, nivel, ap, apw, dp from gearscore where id = ' + message.author, function (err, gs) {
+        con.query('SELECT id, classe, nivel, ap, apw, dp from gearscore where id = ' + ((message.author)/2), function (err, gs) {
             if (err) throw err;
             message.channel.send('Seu GS <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp);
         })
-
     }
 });
 
