@@ -1,0 +1,386 @@
+2020-03-30 08:42:41 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:42:41 - Started 12660
+2020-03-30 08:51:48 - Stopping geromelbot.exe
+2020-03-30 08:51:48 - ProcessKill 12660
+2020-03-30 08:51:48 - Found child process: 13372 Name: conhost.exe
+2020-03-30 08:51:48 - Found child process: 16672 Name: node.exe
+2020-03-30 08:51:48 - Stopping process 13372
+2020-03-30 08:51:48 - Send SIGINT 13372
+2020-03-30 08:51:48 - SIGINT to 13372 failed - Killing as fallback
+2020-03-30 08:51:48 - Stopping process 16672
+2020-03-30 08:51:48 - Send SIGINT 16672
+2020-03-30 08:51:48 - SIGINT to 16672 failed - Killing as fallback
+2020-03-30 08:51:48 - Stopping process 12660
+2020-03-30 08:51:48 - Send SIGINT 12660
+2020-03-30 08:51:48 - SIGINT to 12660 failed - Killing as fallback
+2020-03-30 08:51:48 - Finished geromelbot.exe
+2020-03-30 08:51:49 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:51:49 - Started 7004
+2020-03-30 08:52:40 - Stopping geromelbot.exe
+2020-03-30 08:52:40 - ProcessKill 7004
+2020-03-30 08:52:40 - Found child process: 14740 Name: conhost.exe
+2020-03-30 08:52:40 - Found child process: 13956 Name: node.exe
+2020-03-30 08:52:40 - Stopping process 14740
+2020-03-30 08:52:40 - Send SIGINT 14740
+2020-03-30 08:52:40 - SIGINT to 14740 failed - Killing as fallback
+2020-03-30 08:52:40 - Stopping process 13956
+2020-03-30 08:52:40 - Send SIGINT 13956
+2020-03-30 08:52:40 - SIGINT to 13956 failed - Killing as fallback
+2020-03-30 08:52:40 - Stopping process 7004
+2020-03-30 08:52:40 - Send SIGINT 7004
+2020-03-30 08:52:40 - SIGINT to 7004 failed - Killing as fallback
+2020-03-30 08:52:40 - Finished geromelbot.exe
+2020-03-30 08:52:41 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:52:41 - Started 16136
+2020-03-30 08:53:28 - Stopping geromelbot.exe
+2020-03-30 08:53:28 - ProcessKill 16136
+2020-03-30 08:53:28 - Found child process: 9200 Name: conhost.exe
+2020-03-30 08:53:28 - Found child process: 12100 Name: node.exe
+2020-03-30 08:53:28 - Stopping process 9200
+2020-03-30 08:53:28 - Send SIGINT 9200
+2020-03-30 08:53:28 - SIGINT to 9200 failed - Killing as fallback
+2020-03-30 08:53:28 - Stopping process 12100
+2020-03-30 08:53:28 - Send SIGINT 12100
+2020-03-30 08:53:28 - SIGINT to 12100 failed - Killing as fallback
+2020-03-30 08:53:28 - Stopping process 16136
+2020-03-30 08:53:28 - Send SIGINT 16136
+2020-03-30 08:53:28 - SIGINT to 16136 failed - Killing as fallback
+2020-03-30 08:53:28 - Finished geromelbot.exe
+2020-03-30 08:53:29 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:53:29 - Started 15704
+2020-03-30 08:55:35 - Stopping geromelbot.exe
+2020-03-30 08:55:35 - ProcessKill 15704
+2020-03-30 08:55:35 - Found child process: 8120 Name: conhost.exe
+2020-03-30 08:55:35 - Found child process: 16556 Name: node.exe
+2020-03-30 08:55:35 - Stopping process 8120
+2020-03-30 08:55:35 - Send SIGINT 8120
+2020-03-30 08:55:35 - SIGINT to 8120 failed - Killing as fallback
+2020-03-30 08:55:35 - Stopping process 16556
+2020-03-30 08:55:35 - Send SIGINT 16556
+2020-03-30 08:55:35 - SIGINT to 16556 failed - Killing as fallback
+2020-03-30 08:55:35 - Stopping process 15704
+2020-03-30 08:55:35 - Send SIGINT 15704
+2020-03-30 08:55:35 - SIGINT to 15704 failed - Killing as fallback
+2020-03-30 08:55:35 - Finished geromelbot.exe
+2020-03-30 08:55:36 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:55:36 - Started 18228
+2020-03-30 08:58:32 - Stopping geromelbot.exe
+2020-03-30 08:58:32 - ProcessKill 18228
+2020-03-30 08:58:32 - Found child process: 8148 Name: conhost.exe
+2020-03-30 08:58:32 - Found child process: 17536 Name: node.exe
+2020-03-30 08:58:32 - Stopping process 8148
+2020-03-30 08:58:32 - Send SIGINT 8148
+2020-03-30 08:58:32 - SIGINT to 8148 failed - Killing as fallback
+2020-03-30 08:58:32 - Stopping process 17536
+2020-03-30 08:58:32 - Send SIGINT 17536
+2020-03-30 08:58:32 - SIGINT to 17536 failed - Killing as fallback
+2020-03-30 08:58:32 - Stopping process 18228
+2020-03-30 08:58:32 - Send SIGINT 18228
+2020-03-30 08:58:32 - SIGINT to 18228 failed - Killing as fallback
+2020-03-30 08:58:32 - Finished geromelbot.exe
+2020-03-30 08:58:33 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:58:33 - Started 4200
+2020-03-30 08:58:43 - Stopping geromelbot.exe
+2020-03-30 08:58:43 - ProcessKill 4200
+2020-03-30 08:58:43 - Found child process: 4076 Name: conhost.exe
+2020-03-30 08:58:43 - Found child process: 12392 Name: node.exe
+2020-03-30 08:58:43 - Stopping process 4076
+2020-03-30 08:58:43 - Send SIGINT 4076
+2020-03-30 08:58:43 - SIGINT to 4076 failed - Killing as fallback
+2020-03-30 08:58:43 - Stopping process 12392
+2020-03-30 08:58:43 - Send SIGINT 12392
+2020-03-30 08:58:43 - SIGINT to 12392 failed - Killing as fallback
+2020-03-30 08:58:43 - Stopping process 4200
+2020-03-30 08:58:43 - Send SIGINT 4200
+2020-03-30 08:58:43 - SIGINT to 4200 failed - Killing as fallback
+2020-03-30 08:58:43 - Finished geromelbot.exe
+2020-03-30 08:58:44 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:58:44 - Started 15648
+2020-03-30 08:59:08 - Stopping geromelbot.exe
+2020-03-30 08:59:08 - ProcessKill 15648
+2020-03-30 08:59:08 - Found child process: 5448 Name: conhost.exe
+2020-03-30 08:59:08 - Found child process: 11656 Name: node.exe
+2020-03-30 08:59:08 - Stopping process 5448
+2020-03-30 08:59:08 - Send SIGINT 5448
+2020-03-30 08:59:08 - SIGINT to 5448 failed - Killing as fallback
+2020-03-30 08:59:08 - Stopping process 11656
+2020-03-30 08:59:08 - Send SIGINT 11656
+2020-03-30 08:59:08 - SIGINT to 11656 failed - Killing as fallback
+2020-03-30 08:59:08 - Stopping process 15648
+2020-03-30 08:59:08 - Send SIGINT 15648
+2020-03-30 08:59:08 - SIGINT to 15648 failed - Killing as fallback
+2020-03-30 08:59:08 - Finished geromelbot.exe
+2020-03-30 08:59:09 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 08:59:09 - Started 3588
+2020-03-30 09:14:22 - Stopping geromelbot.exe
+2020-03-30 09:14:22 - ProcessKill 3588
+2020-03-30 09:14:22 - Found child process: 10440 Name: conhost.exe
+2020-03-30 09:14:22 - Found child process: 5788 Name: node.exe
+2020-03-30 09:14:22 - Stopping process 10440
+2020-03-30 09:14:22 - Send SIGINT 10440
+2020-03-30 09:14:22 - SIGINT to 10440 failed - Killing as fallback
+2020-03-30 09:14:22 - Stopping process 5788
+2020-03-30 09:14:22 - Send SIGINT 5788
+2020-03-30 09:14:22 - SIGINT to 5788 failed - Killing as fallback
+2020-03-30 09:14:22 - Stopping process 3588
+2020-03-30 09:14:22 - Send SIGINT 3588
+2020-03-30 09:14:22 - SIGINT to 3588 failed - Killing as fallback
+2020-03-30 09:14:22 - Finished geromelbot.exe
+2020-03-30 09:14:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 09:14:24 - Started 3972
+2020-03-30 11:41:59 - Stopping geromelbot.exe
+2020-03-30 11:41:59 - ProcessKill 3972
+2020-03-30 11:41:59 - Found child process: 3992 Name: conhost.exe
+2020-03-30 11:41:59 - Found child process: 12584 Name: node.exe
+2020-03-30 11:41:59 - Stopping process 3992
+2020-03-30 11:41:59 - Send SIGINT 3992
+2020-03-30 11:41:59 - SIGINT to 3992 failed - Killing as fallback
+2020-03-30 11:41:59 - Stopping process 12584
+2020-03-30 11:41:59 - Send SIGINT 12584
+2020-03-30 11:41:59 - SIGINT to 12584 failed - Killing as fallback
+2020-03-30 11:41:59 - Stopping process 3972
+2020-03-30 11:41:59 - Send SIGINT 3972
+2020-03-30 11:41:59 - SIGINT to 3972 failed - Killing as fallback
+2020-03-30 11:41:59 - Finished geromelbot.exe
+2020-03-30 11:42:00 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 11:42:00 - Started 4848
+2020-03-30 11:50:14 - Stopping geromelbot.exe
+2020-03-30 11:50:14 - ProcessKill 4848
+2020-03-30 11:50:14 - Found child process: 14244 Name: conhost.exe
+2020-03-30 11:50:14 - Found child process: 3352 Name: node.exe
+2020-03-30 11:50:14 - Stopping process 14244
+2020-03-30 11:50:14 - Send SIGINT 14244
+2020-03-30 11:50:14 - SIGINT to 14244 failed - Killing as fallback
+2020-03-30 11:50:14 - Stopping process 3352
+2020-03-30 11:50:14 - Send SIGINT 3352
+2020-03-30 11:50:14 - SIGINT to 3352 failed - Killing as fallback
+2020-03-30 11:50:14 - Stopping process 4848
+2020-03-30 11:50:14 - Send SIGINT 4848
+2020-03-30 11:50:14 - SIGINT to 4848 failed - Killing as fallback
+2020-03-30 11:50:14 - Finished geromelbot.exe
+2020-03-30 11:50:16 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 11:50:16 - Started 9016
+2020-03-30 11:52:05 - Stopping geromelbot.exe
+2020-03-30 11:52:05 - ProcessKill 9016
+2020-03-30 11:52:05 - Found child process: 15672 Name: conhost.exe
+2020-03-30 11:52:05 - Found child process: 3576 Name: node.exe
+2020-03-30 11:52:05 - Stopping process 15672
+2020-03-30 11:52:05 - Send SIGINT 15672
+2020-03-30 11:52:05 - SIGINT to 15672 failed - Killing as fallback
+2020-03-30 11:52:05 - Stopping process 3576
+2020-03-30 11:52:05 - Send SIGINT 3576
+2020-03-30 11:52:05 - SIGINT to 3576 failed - Killing as fallback
+2020-03-30 11:52:05 - Stopping process 9016
+2020-03-30 11:52:05 - Send SIGINT 9016
+2020-03-30 11:52:05 - SIGINT to 9016 failed - Killing as fallback
+2020-03-30 11:52:05 - Finished geromelbot.exe
+2020-03-30 11:52:06 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 11:52:06 - Started 10792
+2020-03-30 12:20:01 - Stopping geromelbot.exe
+2020-03-30 12:20:01 - ProcessKill 10792
+2020-03-30 12:20:01 - Found child process: 9152 Name: conhost.exe
+2020-03-30 12:20:01 - Found child process: 10572 Name: node.exe
+2020-03-30 12:20:01 - Stopping process 9152
+2020-03-30 12:20:01 - Send SIGINT 9152
+2020-03-30 12:20:01 - SIGINT to 9152 failed - Killing as fallback
+2020-03-30 12:20:01 - Stopping process 10572
+2020-03-30 12:20:02 - Send SIGINT 10572
+2020-03-30 12:20:02 - SIGINT to 10572 failed - Killing as fallback
+2020-03-30 12:20:02 - Stopping process 10792
+2020-03-30 12:20:02 - Send SIGINT 10792
+2020-03-30 12:20:02 - SIGINT to 10792 failed - Killing as fallback
+2020-03-30 12:20:02 - Finished geromelbot.exe
+2020-03-30 12:20:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 12:20:03 - Started 14844
+2020-03-30 12:20:41 - Stopping geromelbot.exe
+2020-03-30 12:20:41 - ProcessKill 14844
+2020-03-30 12:20:41 - Found child process: 11856 Name: conhost.exe
+2020-03-30 12:20:41 - Found child process: 892 Name: node.exe
+2020-03-30 12:20:41 - Stopping process 11856
+2020-03-30 12:20:42 - Send SIGINT 11856
+2020-03-30 12:20:42 - SIGINT to 11856 failed - Killing as fallback
+2020-03-30 12:20:42 - Stopping process 892
+2020-03-30 12:20:42 - Send SIGINT 892
+2020-03-30 12:20:42 - SIGINT to 892 failed - Killing as fallback
+2020-03-30 12:20:42 - Stopping process 14844
+2020-03-30 12:20:42 - Send SIGINT 14844
+2020-03-30 12:20:42 - SIGINT to 14844 failed - Killing as fallback
+2020-03-30 12:20:42 - Finished geromelbot.exe
+2020-03-30 12:27:19 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 12:27:19 - Started 6016
+2020-03-30 12:27:48 - Stopping geromelbot.exe
+2020-03-30 12:27:48 - ProcessKill 6016
+2020-03-30 12:27:48 - Found child process: 10292 Name: conhost.exe
+2020-03-30 12:27:48 - Found child process: 15536 Name: node.exe
+2020-03-30 12:27:48 - Stopping process 10292
+2020-03-30 12:27:48 - Send SIGINT 10292
+2020-03-30 12:27:48 - SIGINT to 10292 failed - Killing as fallback
+2020-03-30 12:27:48 - Stopping process 15536
+2020-03-30 12:27:48 - Send SIGINT 15536
+2020-03-30 12:27:48 - SIGINT to 15536 failed - Killing as fallback
+2020-03-30 12:27:48 - Stopping process 6016
+2020-03-30 12:27:48 - Send SIGINT 6016
+2020-03-30 12:27:48 - SIGINT to 6016 failed - Killing as fallback
+2020-03-30 12:27:48 - Finished geromelbot.exe
+2020-03-30 12:28:08 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 12:28:08 - Started 2660
+2020-03-30 12:28:50 - Stopping geromelbot.exe
+2020-03-30 12:28:50 - ProcessKill 2660
+2020-03-30 12:28:50 - Found child process: 11948 Name: conhost.exe
+2020-03-30 12:28:50 - Found child process: 7748 Name: node.exe
+2020-03-30 12:28:50 - Stopping process 11948
+2020-03-30 12:28:50 - Send SIGINT 11948
+2020-03-30 12:28:50 - SIGINT to 11948 failed - Killing as fallback
+2020-03-30 12:28:51 - Stopping process 7748
+2020-03-30 12:28:51 - Send SIGINT 7748
+2020-03-30 12:28:51 - SIGINT to 7748 failed - Killing as fallback
+2020-03-30 12:28:51 - Stopping process 2660
+2020-03-30 12:28:51 - Send SIGINT 2660
+2020-03-30 12:28:51 - SIGINT to 2660 failed - Killing as fallback
+2020-03-30 12:28:51 - Finished geromelbot.exe
+2020-03-30 13:02:33 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 13:02:33 - Started 2580
+2020-03-30 13:03:35 - Stopping geromelbot.exe
+2020-03-30 13:03:35 - ProcessKill 2580
+2020-03-30 13:03:35 - Found child process: 15340 Name: conhost.exe
+2020-03-30 13:03:35 - Found child process: 8844 Name: node.exe
+2020-03-30 13:03:35 - Stopping process 15340
+2020-03-30 13:03:35 - Send SIGINT 15340
+2020-03-30 13:03:35 - SIGINT to 15340 failed - Killing as fallback
+2020-03-30 13:03:35 - Stopping process 8844
+2020-03-30 13:03:35 - Send SIGINT 8844
+2020-03-30 13:03:35 - SIGINT to 8844 failed - Killing as fallback
+2020-03-30 13:03:35 - Stopping process 2580
+2020-03-30 13:03:35 - Send SIGINT 2580
+2020-03-30 13:03:35 - SIGINT to 2580 failed - Killing as fallback
+2020-03-30 13:03:35 - Finished geromelbot.exe
+2020-03-30 13:03:36 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 13:03:36 - Started 10896
+2020-03-30 13:05:21 - Stopping geromelbot.exe
+2020-03-30 13:05:21 - ProcessKill 10896
+2020-03-30 13:05:21 - Found child process: 12668 Name: conhost.exe
+2020-03-30 13:05:21 - Found child process: 6940 Name: node.exe
+2020-03-30 13:05:21 - Stopping process 12668
+2020-03-30 13:05:21 - Send SIGINT 12668
+2020-03-30 13:05:21 - SIGINT to 12668 failed - Killing as fallback
+2020-03-30 13:05:21 - Stopping process 6940
+2020-03-30 13:05:21 - Send SIGINT 6940
+2020-03-30 13:05:21 - SIGINT to 6940 failed - Killing as fallback
+2020-03-30 13:05:21 - Stopping process 10896
+2020-03-30 13:05:21 - Send SIGINT 10896
+2020-03-30 13:05:21 - SIGINT to 10896 failed - Killing as fallback
+2020-03-30 13:05:21 - Finished geromelbot.exe
+2020-03-30 13:05:22 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 13:05:22 - Started 972
+2020-03-30 13:07:40 - Stopping geromelbot.exe
+2020-03-30 13:07:40 - ProcessKill 972
+2020-03-30 13:07:40 - Found child process: 12796 Name: conhost.exe
+2020-03-30 13:07:40 - Found child process: 1900 Name: node.exe
+2020-03-30 13:07:40 - Stopping process 12796
+2020-03-30 13:07:40 - Send SIGINT 12796
+2020-03-30 13:07:40 - SIGINT to 12796 failed - Killing as fallback
+2020-03-30 13:07:40 - Stopping process 1900
+2020-03-30 13:07:40 - Send SIGINT 1900
+2020-03-30 13:07:40 - SIGINT to 1900 failed - Killing as fallback
+2020-03-30 13:07:40 - Stopping process 972
+2020-03-30 13:07:40 - Send SIGINT 972
+2020-03-30 13:07:40 - SIGINT to 972 failed - Killing as fallback
+2020-03-30 13:07:40 - Finished geromelbot.exe
+2020-03-30 13:07:42 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 13:07:42 - Started 5880
+2020-03-30 13:09:33 - Stopping geromelbot.exe
+2020-03-30 13:09:33 - ProcessKill 5880
+2020-03-30 13:09:33 - Found child process: 8520 Name: conhost.exe
+2020-03-30 13:09:33 - Found child process: 11520 Name: node.exe
+2020-03-30 13:09:33 - Stopping process 8520
+2020-03-30 13:09:33 - Send SIGINT 8520
+2020-03-30 13:09:33 - SIGINT to 8520 failed - Killing as fallback
+2020-03-30 13:09:33 - Stopping process 11520
+2020-03-30 13:09:33 - Send SIGINT 11520
+2020-03-30 13:09:33 - SIGINT to 11520 failed - Killing as fallback
+2020-03-30 13:09:33 - Stopping process 5880
+2020-03-30 13:09:33 - Send SIGINT 5880
+2020-03-30 13:09:33 - SIGINT to 5880 failed - Killing as fallback
+2020-03-30 13:09:33 - Finished geromelbot.exe
+2020-03-30 13:39:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 13:39:03 - Started 13104
+2020-03-30 13:55:50 - Stopping geromelbot.exe
+2020-03-30 13:55:50 - ProcessKill 13104
+2020-03-30 13:55:50 - Found child process: 2516 Name: conhost.exe
+2020-03-30 13:55:50 - Found child process: 12596 Name: node.exe
+2020-03-30 13:55:50 - Stopping process 2516
+2020-03-30 13:55:50 - Send SIGINT 2516
+2020-03-30 13:55:50 - SIGINT to 2516 failed - Killing as fallback
+2020-03-30 13:55:50 - Stopping process 12596
+2020-03-30 13:55:50 - Send SIGINT 12596
+2020-03-30 13:55:50 - SIGINT to 12596 failed - Killing as fallback
+2020-03-30 13:55:50 - Stopping process 13104
+2020-03-30 13:55:50 - Send SIGINT 13104
+2020-03-30 13:55:50 - SIGINT to 13104 failed - Killing as fallback
+2020-03-30 13:55:50 - Finished geromelbot.exe
+2020-03-30 14:19:33 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 14:19:33 - Started 16200
+2020-03-30 14:22:10 - Stopping geromelbot.exe
+2020-03-30 14:22:10 - ProcessKill 16200
+2020-03-30 14:22:11 - Found child process: 3440 Name: conhost.exe
+2020-03-30 14:22:11 - Found child process: 17308 Name: node.exe
+2020-03-30 14:22:11 - Stopping process 3440
+2020-03-30 14:22:11 - Send SIGINT 3440
+2020-03-30 14:22:11 - SIGINT to 3440 failed - Killing as fallback
+2020-03-30 14:22:11 - Stopping process 17308
+2020-03-30 14:22:11 - Send SIGINT 17308
+2020-03-30 14:22:11 - SIGINT to 17308 failed - Killing as fallback
+2020-03-30 14:22:11 - Stopping process 16200
+2020-03-30 14:22:11 - Send SIGINT 16200
+2020-03-30 14:22:11 - SIGINT to 16200 failed - Killing as fallback
+2020-03-30 14:22:11 - Finished geromelbot.exe
+2020-03-30 14:22:12 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 14:22:12 - Started 13656
+2020-03-30 14:24:01 - Stopping geromelbot.exe
+2020-03-30 14:24:01 - ProcessKill 13656
+2020-03-30 14:24:01 - Found child process: 17376 Name: conhost.exe
+2020-03-30 14:24:01 - Found child process: 2528 Name: node.exe
+2020-03-30 14:24:01 - Stopping process 17376
+2020-03-30 14:24:02 - Send SIGINT 17376
+2020-03-30 14:24:02 - SIGINT to 17376 failed - Killing as fallback
+2020-03-30 14:24:02 - Stopping process 2528
+2020-03-30 14:24:02 - Send SIGINT 2528
+2020-03-30 14:24:02 - SIGINT to 2528 failed - Killing as fallback
+2020-03-30 14:24:02 - Stopping process 13656
+2020-03-30 14:24:02 - Send SIGINT 13656
+2020-03-30 14:24:02 - SIGINT to 13656 failed - Killing as fallback
+2020-03-30 14:24:02 - Finished geromelbot.exe
+2020-03-30 14:24:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 14:24:03 - Started 16996
+2020-03-30 14:24:52 - Stopping geromelbot.exe
+2020-03-30 14:24:52 - ProcessKill 16996
+2020-03-30 14:24:53 - Found child process: 5380 Name: conhost.exe
+2020-03-30 14:24:53 - Found child process: 14120 Name: node.exe
+2020-03-30 14:24:53 - Stopping process 5380
+2020-03-30 14:24:53 - Send SIGINT 5380
+2020-03-30 14:24:53 - SIGINT to 5380 failed - Killing as fallback
+2020-03-30 14:24:53 - Stopping process 14120
+2020-03-30 14:24:53 - Send SIGINT 14120
+2020-03-30 14:24:53 - SIGINT to 14120 failed - Killing as fallback
+2020-03-30 14:24:53 - Stopping process 16996
+2020-03-30 14:24:53 - Send SIGINT 16996
+2020-03-30 14:24:53 - SIGINT to 16996 failed - Killing as fallback
+2020-03-30 14:24:53 - Finished geromelbot.exe
+2020-03-30 14:24:54 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 14:24:54 - Started 6752
+2020-03-30 18:38:20 - Stopping geromelbot.exe
+2020-03-30 18:38:20 - ProcessKill 6752
+2020-03-30 18:38:21 - Found child process: 14592 Name: conhost.exe
+2020-03-30 18:38:21 - Found child process: 12172 Name: node.exe
+2020-03-30 18:38:21 - Stopping process 14592
+2020-03-30 18:38:21 - Send SIGINT 14592
+2020-03-30 18:38:21 - SIGINT to 14592 failed - Killing as fallback
+2020-03-30 18:38:21 - Stopping process 12172
+2020-03-30 18:38:21 - Send SIGINT 12172
+2020-03-30 18:38:21 - SIGINT to 12172 failed - Killing as fallback
+2020-03-30 18:38:21 - Stopping process 6752
+2020-03-30 18:38:21 - Send SIGINT 6752
+2020-03-30 18:38:21 - SIGINT to 6752 failed - Killing as fallback
+2020-03-30 18:38:21 - Finished geromelbot.exe
+2020-03-30 18:42:44 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\joaov\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file D:\Programação\BOTDiscord\BOTGeromel\index.js --scriptoptions= --log "GeromelBOT wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-03-30 18:42:44 - Started 18228
