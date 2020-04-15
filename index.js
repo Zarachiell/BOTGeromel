@@ -170,11 +170,11 @@ bot.on("message", function (message) {
     }
 
 
-   /* function getDayOfTheWeek() {
+    function getDayOfTheWeek() {
         var date = new Date();
         var day = date.getDay();
         return day;
-    }*/
+    }
 });
 
 bot.login(token);
