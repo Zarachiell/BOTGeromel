@@ -103,3 +103,762 @@ ReferenceError: d is not defined
     at WebSocket.onMessage (D:\Programação\BOTDiscord\BOTGeromel\node_modules\ws\lib\event-target.js:120:16)
     at WebSocket.emit (events.js:311:20)
     at Receiver.receiverOnMessage (D:\Programação\BOTDiscord\BOTGeromel\node_modules\ws\lib\websocket.js:801:20)
+D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+TypeError: Cannot read property 'id' of undefined
+    at Query.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\index.js:119:58)
+    at Query.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:488:16)
+    at Query.Sequence.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+TypeError: Cannot read property 'id' of undefined
+    at Query.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\index.js:119:58)
+    at Query.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:488:16)
+    at Query.Sequence.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Query.js:149:8)
+    at Query.EofPacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\sequences\Query.js:133:8)
+    at Protocol._parsePacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+(node:4984) UnhandledPromiseRejectionWarning: FetchError: request to https://discordapp.com/api/v7/gateway/bot failed, reason: getaddrinfo ENOTFOUND discordapp.com
+    at RequestHandler.execute (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\rest\RequestHandler.js:107:21)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:4984) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:4984) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+(node:5364) UnhandledPromiseRejectionWarning: FetchError: request to https://discordapp.com/api/v7/gateway/bot failed, reason: getaddrinfo ENOTFOUND discordapp.com
+    at RequestHandler.execute (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\rest\RequestHandler.js:107:21)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:5364) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:5364) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+events.js:288
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:112:13)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:323:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (events.js:311:20)
+    at Protocol._delegateError (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.end (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\protocol\Protocol.js:116:8)
+    at Socket.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\node_modules\mysql\lib\Connection.js:94:28)
+    [... lines matching original stack trace ...]
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  fatal: true,
+  code: 'PROTOCOL_CONNECTION_LOST'
+}
+D:\Programação\BOTDiscord\BOTGeromel\index.js:165
+    if(message.content.startsWith(`${prefix2}`)) message.channel.send(message.content, {tts:true});
+                                     ^
+
+ReferenceError: prefix2 is not defined
+    at Client.<anonymous> (D:\Programação\BOTDiscord\BOTGeromel\index.js:165:38)
+    at Client.emit (events.js:311:20)
+    at MessageCreateAction.handle (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\client\actions\MessageCreate.js:31:14)
+    at Object.module.exports [as MESSAGE_CREATE] (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\client\websocket\handlers\MESSAGE_CREATE.js:4:32)
+    at WebSocketManager.handlePacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\client\websocket\WebSocketManager.js:386:31)
+    at WebSocketShard.onPacket (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\client\websocket\WebSocketShard.js:435:22)
+    at WebSocketShard.onMessage (D:\Programação\BOTDiscord\BOTGeromel\node_modules\discord.js\src\client\websocket\WebSocketShard.js:293:10)
+    at WebSocket.onMessage (D:\Programação\BOTDiscord\BOTGeromel\node_modules\ws\lib\event-target.js:120:16)
+    at WebSocket.emit (events.js:311:20)
+    at Receiver.receiverOnMessage (D:\Programação\BOTDiscord\BOTGeromel\node_modules\ws\lib\websocket.js:801:20)
