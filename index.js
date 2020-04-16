@@ -163,7 +163,7 @@ bot.on("message", function (message) {
     if (message.content.startsWith(`${prefix}DALE`)) message.channel.send('DALE', { tts: true });
 
     if(message.content.startsWith(`${prefix2}`)) {
-        message.channel.send(message.content, {tts:true});
+        message.channel.send(message.content.split("*"), {tts:true});
     }
 
 
