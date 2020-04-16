@@ -3,7 +3,7 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-const { prefix,prefix2 , token } = require('./config.json');
+const { prefix, prefix2, token } = require('./config.json');
 var mysql = require('mysql');
 
 var bot = new Discord.Client();
@@ -162,10 +162,12 @@ bot.on("message", function (message) {
     if (message.content.startsWith(`${prefix}comandos`)) message.channel.send('Lista de Comandos Disponíveis: !addgs; !gs; !brackets; !comandos');
     if (message.content.startsWith(`${prefix}DALE`)) message.channel.send('DALE', { tts: true });
 
-    if(message.content.startsWith(`${prefix2}`)) {
-        message.channel.send(message.content, {tts:true});
+    if (message.content.startsWith(`${prefix2}`)){
+        const msgs = message.content.slice(prefix2.lenght).split(' ');
+        for(var i = 0; i <= msgs.lenght; i++){
+            message.channel.send(msgs[i + 1], {tts:true});
+        }
     }
-
 
     function getDayOfTheWeek() {
         var date = new Date();
