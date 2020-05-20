@@ -3,26 +3,10 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-const { prefix,prefix2 , token } = require('./config.json');
+const { prefix, prefix2, token } = require('./config.json');
 var mysql = require('mysql');
-
+var db = require('./connectiondb');
 var bot = new Discord.Client();
-
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "admin",
-    database: "dbgearscore"
-});
-
-con.connect(function (error) {
-    if (!!error) {
-        console.log('Erro')
-    } else {
-        console.log('Conectado')
-    }
-})
-
 
 /**
  * Inicia o Bot e deixa em "Ready" como um listener e mostra no log que está funcionando.
@@ -39,17 +23,14 @@ bot.on("ready", function () {
 bot.on("message", function (message) {
     if (message.author.equals(bot.user)) return;
     const gs = message.content.slice(prefix.lenght).split(' ');
-    var day = getDayOfTheWeek();
+    //var day = getDayOfTheWeek();
     var gsTotal;
+    var mentions = new Boolean(false);
 
     if (message.content.startsWith(`${prefix}addgs`) && gs[1].startsWith('<@')) {
-        var ap = parseInt(gs[4]);
-        var apw = parseInt(gs[5]);
-        var dp = parseInt(gs[6]);
-        if (gs[4] > gs[5]) gsTotal = ap + dp;
-        if (gs[5] > gs[4]) gsTotal = apw + dp;
-        if (gs[4] == gs[5]) gsTotal = apw + dp;
-        con.query('INSERT INTO gearscore values(' + message.mentions.users.first().id + ",'" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ',' + gsTotal + ')', function (err, rows) {
+        mentions = true;
+        gsTotal = insertGsUser(gs, mentions);
+        db.query("INSERT INTO gearscore values('" + message.mentions.users.first().id + "','" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ',' + gsTotal + ')', function (err, rows) {
             if (err) {
                 if (err.code == 'ER_DUP_ENTRY' || err.errno == 1062) {
                     message.channel.send('GS já cadastrado!');
@@ -66,13 +47,8 @@ bot.on("message", function (message) {
         });
     }
     if (message.content.startsWith(`${prefix}addgs`) && !gs[1].startsWith('<@')) {
-        var ap = parseInt(gs[3]);
-        var apw = parseInt(gs[4]);
-        var dp = parseInt(gs[5]);
-        if (gs[3] > gs[4]) gsTotal = ap + dp;
-        if (gs[4] > gs[3]) gsTotal = apw + dp;
-        if (gs[4] == gs[3]) gsTotal = apw + dp;
-        con.query('INSERT INTO gearscore values(' + message.author + ",'" + gs[1] + "'," + gs[2] + ', ' + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gsTotal + ')', function (err, rows) {
+        gsTotal = insertGsUser(gs, mentions);
+        db.query('INSERT INTO gearscore values(' + message.author + ",'" + gs[1] + "'," + gs[2] + ', ' + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gsTotal + ')', function (err, rows) {
             if (err) {
                 if (err.code == 'ER_DUP_ENTRY' || err.errno == 1062) {
                     message.channel.send('GS já cadastrado!');
@@ -84,46 +60,98 @@ bot.on("message", function (message) {
                     message.channel.send('Erro Desconhecido.');
                 }
             } else {
-                message.channel.send(`GS e Classe <@` + message.author + `> ${gs[1]} ${gs[2]} ${gs[3]} ${gs[4]}`);
+                message.channel.send(`GS e Classe <@` + message.author + `> ${gs[1]} ${gs[2]} ${gs[3]} ${gs[4]} ${gs[5]}`);
             }
         });
     }
 
     if (message.content.startsWith(`${prefix}gs`) && message.content.endsWith('>')) {
-        con.query('SELECT id, classe, nivel, ap, apw, dp from gearscore where id = ' + message.mentions.users.first().id, function (err, gs) {
+        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore where id = ' + message.mentions.users.first().id, function (err, gs) {
             if (err) {
                 if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) {
                     message.channel.send('Comando Não Reconhecido!');
                 }
-                else {
+                if (err) {
                     message.channel.send('Erro Desconhecido.');
                 }
+            } if (gs.length > 0) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        title: "Gearscore",
+                        description: "Gearscore do membro <@" + gs[0].id + ">",
+                        fields: [{
+                            name: "Classe",
+                            value: gs[0].classe
+                        },
 
+                        { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
+                        { name: '\u200B', value: '\u200B', inline: true },
+                        { name: "AP Awakening", value: gs[0].apw, inline: true },
+                        //{ name: '\u200B', value: '\u200B', inline: true },
+                        { name: "Defesa", value: gs[0].dp, inline: true },
+                        { name: "Gearscore Total", value: gs[0].gs, inline: true }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            text: "GeromelBOT"
+                        }
+                    }
+                });
             } else {
-                message.channel.send('Seu GS <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp) + ' ';
+                message.channel.send('Usuário não cadastrado');
             }
         });
     }
     if (message.content.startsWith(`${prefix}gs`) && !message.content.endsWith('>')) {
-        con.query('SELECT id, classe, nivel, ap, apw, dp from gearscore where id = ' + message.author, function (err, gs) {
+        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore where id = ' + message.author, function (err, gs) {
             if (err) {
-
                 if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) {
                     message.channel.send('Comando Não Reconhecido!');
                 }
                 else {
                     console.log('Erro Desconhecido.');
                 }
+            } if (gs.length > 0) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        author: {
+                            name: message.author.tag,
+                            icon_url: message.author.defaultAvatarURL
+                        },
+                        title: "Gearscore",
+                        description: "Gearscore do membro <@" + gs[0].id + ">",
+                        fields: [{
+                            name: "Classe",
+                            value: gs[0].classe
+                        },
 
+                        { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
+                        { name: '\u200B', value: '\u200B', inline: true },
+                        { name: "AP Awakening", value: gs[0].apw, inline: true },
+                        //{ name: '\u200B', value: '\u200B', inline: true },
+                        { name: "Defesa", value: gs[0].dp, inline: true },
+                        { name: "Gearscore Total", value: gs[0].gs, inline: true }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            text: "GeromelBOT"
+                        }
+                    }
+                });
+                //message.channel.send('Seu Gs <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp + ' ' + gs[0].gs);
             } else {
-                message.channel.send('Seu Gs <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp);
+                message.channel.send('Usuario não cadastrado');
             }
+
         });
+
     }
 
     if (message.content.startsWith(`${prefix}rank`)) {
         var aux = 0;
-        con.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore order by gs desc', function (err, gs) {
+        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore order by gs desc', function (err, gs) {
             if (err) {
                 if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) {
                     message.channel.send('Comando Não Reconhecido!');
@@ -162,8 +190,8 @@ bot.on("message", function (message) {
     if (message.content.startsWith(`${prefix}comandos`)) message.channel.send('Lista de Comandos Disponíveis: !addgs; !gs; !brackets; !comandos');
     if (message.content.startsWith(`${prefix}DALE`)) message.channel.send('DALE', { tts: true });
 
-    if(message.content.startsWith(`${prefix2}`)) {
-        message.channel.send(message.content.split("*"), {tts:true});
+    if (message.content.startsWith(`${prefix2}`)) {
+        message.channel.send(message.content.split("*"), { tts: true });
     }
 
 
@@ -173,5 +201,28 @@ bot.on("message", function (message) {
         return day;
     }
 });
+
+function insertGsUser(gs) {
+
+    if (mentions = true) {
+        var gsTotal;
+        var ap = parseInt(gs[4]);
+        var apw = parseInt(gs[5]);
+        var dp = parseInt(gs[6]);
+        if (gs[4] > gs[5]) gsTotal = ap + dp;
+        if (gs[5] > gs[4]) gsTotal = apw + dp;
+        if (gs[5] == gs[4]) gsTotal = apw + dp;
+    } else {
+        var gsTotal;
+        var ap = parseInt(gs[3]);
+        var apw = parseInt(gs[4]);
+        var dp = parseInt(gs[5]);
+        if (gs[3] > gs[4]) gsTotal = ap + dp;
+        if (gs[4] > gs[3]) gsTotal = apw + dp;
+        if (gs[4] == gs[3]) gsTotal = apw + dp;
+    }
+
+    return gsTotal;
+}
 
 bot.login(token);
