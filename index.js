@@ -23,14 +23,15 @@ bot.on("ready", function () {
 bot.on("message", function (message) {
     if (message.author.equals(bot.user)) return;
     const gs = message.content.slice(prefix.lenght).split(' ');
-    //var day = getDayOfTheWeek();
+    const day = getDayOfTheWeek();
     var gsTotal;
     var mentions = new Boolean(false);
 
     if (message.content.startsWith(`${prefix}addgs`) && gs[1].startsWith('<@')) {
+        if (!message.member.roles.cache.get('672193236500217876')) return;
         mentions = true;
         gsTotal = insertGsUser(gs, mentions);
-        db.query("INSERT INTO gearscore values('" + message.mentions.users.first().id + "','" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ',' + gsTotal + ')', function (err, rows) {
+        db.query("INSERT INTO gearscore values('" + message.mentions.users.first().id + "','" + gs[2] + "'," + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gs[6] + ',' + gsTotal + ",'" + day + "'" + ')', function (err, rows) {
             if (err) {
                 if (err.code == 'ER_DUP_ENTRY' || err.errno == 1062) {
                     message.channel.send('GS já cadastrado!');
@@ -42,13 +43,14 @@ bot.on("message", function (message) {
                     throw err;
                 }
             } else {
-                message.channel.send(`GS e Classe ${gs[1]} ${gs[2]} ${gs[3]} ${gs[4]} ${gs[5]} ${gs[6]}`);
+                message.channel.send('Gearscore adicionado!');
             }
         });
     }
     if (message.content.startsWith(`${prefix}addgs`) && !gs[1].startsWith('<@')) {
+        mentions = false;
         gsTotal = insertGsUser(gs, mentions);
-        db.query('INSERT INTO gearscore values(' + message.author + ",'" + gs[1] + "'," + gs[2] + ', ' + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gsTotal + ')', function (err, rows) {
+        db.query('INSERT INTO gearscore values(' + message.author + ",'" + gs[1] + "', " + gs[2] + ', ' + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gsTotal + ",'" + day + "'" + ')', function (err, rows) {
             if (err) {
                 if (err.code == 'ER_DUP_ENTRY' || err.errno == 1062) {
                     message.channel.send('GS já cadastrado!');
@@ -58,13 +60,13 @@ bot.on("message", function (message) {
                 }
                 else {
                     message.channel.send('Erro Desconhecido.');
+                    console.log(err.code + 'INSERT INTO gearscore values(' + message.author + "','" + gs[1] + "', " + gs[2] + ', ' + gs[3] + ', ' + gs[4] + ', ' + gs[5] + ', ' + gsTotal + ",'" + day + "'" + ')');
                 }
             } else {
-                message.channel.send(`GS e Classe <@` + message.author + `> ${gs[1]} ${gs[2]} ${gs[3]} ${gs[4]} ${gs[5]}`);
+                message.channel.send('Gearscore adicionado!');
             }
         });
     }
-
     if (message.content.startsWith(`${prefix}gs`) && message.content.endsWith('>')) {
         db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore where id = ' + message.mentions.users.first().id, function (err, gs) {
             if (err) {
@@ -80,17 +82,15 @@ bot.on("message", function (message) {
                         color: 3447003,
                         title: "Gearscore",
                         description: "Gearscore do membro <@" + gs[0].id + ">",
-                        fields: [{
-                            name: "Classe",
-                            value: gs[0].classe
-                        },
-
-                        { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
-                        { name: '\u200B', value: '\u200B', inline: true },
-                        { name: "AP Awakening", value: gs[0].apw, inline: true },
-                        //{ name: '\u200B', value: '\u200B', inline: true },
-                        { name: "Defesa", value: gs[0].dp, inline: true },
-                        { name: "Gearscore Total", value: gs[0].gs, inline: true }
+                        fields: [
+                            { name: "Classe", value: gs[0].classe, inline: true },
+                            { name: "Nível", value: gs[0].nivel, inline: true },
+                            { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
+                            //{ name: '\u200B', value: '\u200B', inline: true },
+                            { name: "AP Awakening", value: gs[0].apw, inline: true },
+                            //{ name: '\u200B', value: '\u200B', inline: true },
+                            { name: "Defesa", value: gs[0].dp, inline: true },
+                            { name: "Gearscore Total", value: gs[0].gs, inline: true }
                         ],
                         timestamp: new Date(),
                         footer: {
@@ -104,7 +104,7 @@ bot.on("message", function (message) {
         });
     }
     if (message.content.startsWith(`${prefix}gs`) && !message.content.endsWith('>')) {
-        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore where id = ' + message.author, function (err, gs) {
+        db.query('SELECT id, classe, nivel, ap, apw, dp, gs, log from gearscore where id = ' + message.author, function (err, gs) {
             if (err) {
                 if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) {
                     message.channel.send('Comando Não Reconhecido!');
@@ -116,23 +116,17 @@ bot.on("message", function (message) {
                 message.channel.send({
                     embed: {
                         color: 3447003,
-                        author: {
-                            name: message.author.tag,
-                            icon_url: message.author.defaultAvatarURL
-                        },
                         title: "Gearscore",
                         description: "Gearscore do membro <@" + gs[0].id + ">",
-                        fields: [{
-                            name: "Classe",
-                            value: gs[0].classe
-                        },
-
-                        { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
-                        { name: '\u200B', value: '\u200B', inline: true },
-                        { name: "AP Awakening", value: gs[0].apw, inline: true },
-                        //{ name: '\u200B', value: '\u200B', inline: true },
-                        { name: "Defesa", value: gs[0].dp, inline: true },
-                        { name: "Gearscore Total", value: gs[0].gs, inline: true }
+                        fields: [
+                            { name: "Classe", value: gs[0].classe, inline: true },
+                            { name: "Nível", value: gs[0].nivel, inline: true },
+                            { name: "Poder de Ataque: ", value: gs[0].ap, inline: true },
+                            //{ name: '\u200B', value: '\u200B', inline: true },
+                            { name: "AP Awakening", value: gs[0].apw, inline: true },
+                            //{ name: '\u200B', value: '\u200B', inline: true },
+                            { name: "Defesa", value: gs[0].dp, inline: true },
+                            { name: "Gearscore Total", value: gs[0].gs, inline: true }
                         ],
                         timestamp: new Date(),
                         footer: {
@@ -140,7 +134,13 @@ bot.on("message", function (message) {
                         }
                     }
                 });
-                //message.channel.send('Seu Gs <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp + ' ' + gs[0].gs);
+                var check = checkDate(gs[0].log);
+                if (check > 30) {
+                    console.log('Apenas!');
+                } else {
+                    console.log('treta');
+                }
+                console.log(check);
             } else {
                 message.channel.send('Usuario não cadastrado');
             }
@@ -148,10 +148,40 @@ bot.on("message", function (message) {
         });
 
     }
+    if (message.content.startsWith(`${prefix}fixgs`) && gs[1].startsWith('<@')) {
+        if (!message.member.roles.cache.get('672193236500217876')) return;
+        mentions = true;
+        var gsTotal = insertGsUser(gs, mentions);
+        //  classe, nivel, ap, apw, dp, gs
+        //fixgs @[ARCHER]GoldGoldGold Valkyrie 63 301 303 100
+        db.query("UPDATE gearscore SET classe = '" + gs[2] + "', nivel = " + gs[3] + ', ap = ' + gs[4] + ', apw = ' + gs[5] + ', dp = ' + gs[6] + ', gs = ' + gsTotal + " where id = '" + message.mentions.users.first().id + "'", function (err) {
+            if (err) {
+                if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) message.channel.send('Erro no comando!');
 
+                console.log(err.code + err.errno);
+            } else {
+                message.channel.send("Gearscore Atualizado!");
+            }
+        });
+    }
+    if (message.content.startsWith(`${prefix}fixgs`) && !gs[1].startsWith('<@')) {
+        mentions = false;
+        gsTotal = insertGsUser(gs, mentions);
+        //  classe, nivel, ap, apw, dp, gs
+        //!fixgs Musah 62 270 273 316
+        db.query("UPDATE gearscore SET classe = '" + gs[1] + "', nivel = " + gs[2] + ', ap = ' + gs[3] + ', apw = ' + gs[4] + ', dp = ' + gs[5] + ', gs = ' + gsTotal + ' where id = ' + message.author, function (err) {
+            if (err) {
+                console.log(err.code + err.errno);
+                console.log(gs[1] + ' ' + gs[2] + ' ' + gs[3] + ' ' + gs[4] + ' ' + gs[5] + ' ' + gsTotal + ' ' + message.author);
+                message.channel.send(gsTotal);
+            } else {
+                message.channel.send("Gearscore Atualizado!");
+            }
+        });
+    }
     if (message.content.startsWith(`${prefix}rank`)) {
         var aux = 0;
-        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore order by gs desc', function (err, gs) {
+        db.query('SELECT id, classe, nivel, ap, apw, dp, gs from gearscore order by gs desc limit 15', function (err, gs) {
             if (err) {
                 if (err.code == 'ER_BAD_FIELD_ERROR' || err.errno == 1054) {
                     message.channel.send('Comando Não Reconhecido!');
@@ -160,28 +190,81 @@ bot.on("message", function (message) {
                     console.log('Erro Desconhecido.');
                 }
 
-            } else {
-                //Método não corno, só que não tão bunitinho
-                for (var i = 0; i < 5; i++) {
-                    message.channel.send('Seu Gs <@' + gs[i].id + '> ' + gs[i].classe + ' ' + gs[i].nivel + ' ' + gs[i].ap + ' ' + gs[i].apw + ' ' + gs[i].dp + ' ' + gs[i].gs);
-                }
-                //Método Corno mas bunitinho
-                /*message.channel.send('Seu Gs <@' + gs[0].id + '> ' + gs[0].classe + ' ' + gs[0].nivel + ' ' + gs[0].ap + ' ' + gs[0].apw + ' ' + gs[0].dp + ' ' + gs[0].gs + '\n' +
-                    'Seu Gs <@' + gs[1].id + '> ' + gs[1].classe + ' ' + gs[1].nivel + ' ' + gs[1].ap + ' ' + gs[1].apw + ' ' + gs[1].dp + ' ' + gs[1].gs + '\n' +
-                    'Seu Gs <@' + gs[2].id + '> ' + gs[2].classe + ' ' + gs[2].nivel + ' ' + gs[2].ap + ' ' + gs[2].apw + ' ' + gs[2].dp + ' ' + gs[2].gs + '\n' +
-                    'Seu Gs <@' + gs[3].id + '> ' + gs[3].classe + ' ' + gs[3].nivel + ' ' + gs[3].ap + ' ' + gs[3].apw + ' ' + gs[3].dp + ' ' + gs[3].gs + '\n' +
-                    'Seu Gs <@' + gs[4].id + '> ' + gs[4].classe + ' ' + gs[4].nivel + ' ' + gs[4].ap + ' ' + gs[4].apw + ' ' + gs[4].dp + ' ' + gs[4].gs + '\n'
-                    'Seu Gs <@' + gs[5].id + '> ' + gs[5].classe + ' ' + gs[5].nivel + ' ' + gs[5].ap + ' ' + gs[5].apw + ' ' + gs[5].dp + ' ' + gs[5].gs + '\n' +
-                    'Seu Gs <@' + gs[6].id + '> ' + gs[6].classe + ' ' + gs[6].nivel + ' ' + gs[6].ap + ' ' + gs[6].apw + ' ' + gs[6].dp + ' ' + gs[6].gs + '\n' +
-                    'Seu Gs <@' + gs[7].id + '> ' + gs[7].classe + ' ' + gs[7].nivel + ' ' + gs[7].ap + ' ' + gs[7].apw + ' ' + gs[7].dp + ' ' + gs[7].gs + '\n' +
-                    'Seu Gs <@' + gs[8].id + '> ' + gs[8].classe + ' ' + gs[8].nivel + ' ' + gs[8].ap + ' ' + gs[8].apw + ' ' + gs[8].dp + ' ' + gs[8].gs + '\n' +
-                    'Seu Gs <@' + gs[9].id + '> ' + gs[9].classe + ' ' + gs[9].nivel + ' ' + gs[9].ap + ' ' + gs[9].apw + ' ' + gs[9].dp + ' ' + gs[9].gs + '\n' +
-                    'Seu Gs <@' + gs[10].id + '> ' + gs[10].classe + ' ' + gs[10].nivel + ' ' + gs[10].ap + ' ' + gs[10].apw + ' ' + gs[10].dp + ' ' + gs[10].gs + '\n' +
-                    'Seu Gs <@' + gs[11].id + '> ' + gs[11].classe + ' ' + gs[11].nivel + ' ' + gs[11].ap + ' ' + gs[11].apw + ' ' + gs[11].dp + ' ' + gs[11].gs + '\n' +
-                    'Seu Gs <@' + gs[12].id + '> ' + gs[12].classe + ' ' + gs[12].nivel + ' ' + gs[12].ap + ' ' + gs[12].apw + ' ' + gs[12].dp + ' ' + gs[12].gs + '\n' +
-                    'Seu Gs <@' + gs[13].id + '> ' + gs[13].classe + ' ' + gs[13].nivel + ' ' + gs[13].ap + ' ' + gs[13].apw + ' ' + gs[13].dp + ' ' + gs[13].gs + '\n' +
-                    'Seu Gs <@' + gs[14].id + '> ' + gs[14].classe + ' ' + gs[14].nivel + ' ' + gs[14].ap + ' ' + gs[14].apw + ' ' + gs[14].dp + ' ' + gs[14].gs );*/
+            } if (gs.length > 0) {
+                message.channel.send({
+                    embed: {
+                        color: 3447003,
+                        title: "Gearscore",
+                        description: "Rank da Guilda",
+                        fields: [
+                            { name: "Nome:", value: "<@" + gs[0].id + ">", inline: true },
+                            { name: "Classe", value: gs[0].classe, inline: true },
+                            { name: "GS: ", value: gs[0].gs, inline: true },
 
+                            { name: "Nome:", value: "<@" + gs[1].id + ">", inline: true },
+                            { name: "Classe", value: gs[1].classe, inline: true },
+                            { name: "GS: ", value: gs[1].gs, inline: true },
+
+                            { name: "Nome:", value: "<@" + gs[2].id + ">", inline: true },
+                            { name: "Classe", value: gs[2].classe, inline: true },
+                            { name: "GS: ", value: gs[2].gs, inline: true },
+
+                            { name: "Nome:", value: "<@" + gs[3].id + ">", inline: true },
+                            { name: "Classe", value: gs[3].classe, inline: true },
+                            { name: "GS: ", value: gs[3].gs, inline: true },
+
+                            /*{ name: "Nome:", value: "<@" + gs[4].id + ">", inline: true },
+                            { name: "Classe", value: gs[4].classe, inline: true},
+                            { name: "GS: ", value: gs[4].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[5].id + ">", inline: true },
+                            { name: "Classe", value: gs[5].classe, inline: true},
+                            { name: "GS: ", value: gs[5].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[6].id + ">", inline: true },
+                            { name: "Classe", value: gs[6].classe, inline: true},
+                            { name: "GS: ", value: gs[6].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[7].id + ">", inline: true },
+                            { name: "Classe", value: gs[7].classe, inline: true},
+                            { name: "GS: ", value: gs[7].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[8].id + ">", inline: true },
+                            { name: "Classe", value: gs[8].classe, inline: true},
+                            { name: "GS: ", value: gs[8].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[9].id + ">", inline: true },
+                            { name: "Classe", value: gs[9].classe, inline: true},
+                            { name: "GS: ", value: gs[9].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[10].id + ">", inline: true },
+                            { name: "Classe", value: gs[10].classe, inline: true},
+                            { name: "GS: ", value: gs[10].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[11].id + ">", inline: true },
+                            { name: "Classe", value: gs[11].classe, inline: true},
+                            { name: "GS: ", value: gs[11].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[12].id + ">", inline: true },
+                            { name: "Classe", value: gs[12].classe, inline: true},
+                            { name: "GS: ", value: gs[12].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[13].id + ">", inline: true },
+                            { name: "Classe", value: gs[13].classe, inline: true},
+                            { name: "GS: ", value: gs[13].gs, inline: true},
+
+                            { name: "Nome:", value: "<@" + gs[14].id + ">", inline: true },
+                            { name: "Classe", value: gs[14].classe, inline: true},
+                            { name: "GS: ", value: gs[14].gs, inline: true},*/
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            text: "GeromelBOT"
+                        }
+                    }
+                });
+            } else {
+                message.channel.send('TETAS');
             }
         });
     }
@@ -197,14 +280,23 @@ bot.on("message", function (message) {
 
     function getDayOfTheWeek() {
         var date = new Date();
-        var day = date.getDay();
-        return day;
+        var data = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        return data;
     }
 });
 
-function insertGsUser(gs) {
 
-    if (mentions = true) {
+function checkDate(day) {
+    const now = new Date();
+    const past = new Date(day);
+    const diff = Math.abs(now.getTime() - past.getTime()); 
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24)); 
+
+    return days;
+}
+function insertGsUser(gs, mentions) {
+
+    if (mentions) {
         var gsTotal;
         var ap = parseInt(gs[4]);
         var apw = parseInt(gs[5]);
