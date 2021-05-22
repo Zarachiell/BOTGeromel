@@ -62,26 +62,31 @@ async function iniciarBusca(mensagem) {
   if (!isEmUmCanalDeVoz(mensagem)) {
     return mensagem.reply('please join a voice channel first!');
   }
-  var isPlaylist = verificaSeEPlaylist(mensagemCortada);
   voiceChannel.join().then(async connection => {
     let song;
-    if (verificaSeEPlaylist(mensagemCortada)) {
-      song = await searchYouTubeAsync(mensagemCortada.join(' '), true);
+    if (verificaSeEPlaylist(mensagem.content)) {
+      let urlPlaylist;
+      urlPlaylist = await searchYouTubeAsync(mensagemCortada.join(' '), true);
+      song = await searchYoutubeAsyncPlaylist(urlPlaylist.url);
       console.log(song);
+      mensagem.reply("Now Playing: " + song[0].title);
+      mensagem.channel.send("Canal: " + song[0].canal);
+      mensagem.channel.send(song[0].url);
+      mensagem.channel.send(song[0].length)
+      let stream = ytdl(song[0].url, { filter: 'audioonly' });
+      dispatcher = connection.play(stream);
     }
-    else
+    else {
       song = await searchYouTubeAsync(mensagemCortada.join(' '), false);
       console.log(song);
-
-    if (song != null) {
       mensagem.reply("Now Playing: " + song.title);
       mensagem.channel.send("Canal: " + song.canal);
       mensagem.channel.send(song.url);
-      let stream = ytdl(song.url, { filter: 'audioonly' });
-      //dispatcher = connection.play(stream);
-      //dispatcher.on('end', () => voiceChannel.leave());
-      isReady = true;
     }
+    let stream = ytdl(song.url, { filter: 'audioonly' });
+    dispatcher = connection.play(stream);
+    dispatcher.on('end', () => voiceChannel.leave());
+    isReady = true;
   }).catch(e => { console.log(e) })
 }
 
@@ -100,29 +105,14 @@ function resume(mensagem) {
   }
 }
 
-function verificaSeEPlaylist(mensagemCortada) {
+function verificaSeEPlaylist(mensagem) {
+  const comando = `${prefix}play`;
+  var mensagemCortada = mensagem.slice(comando.length).split('/');
   for (var i = 0; i < mensagemCortada.length; i++) {
     if (mensagemCortada[i].startsWith('playlist')) {
-      console.log('Deu Certo');
+      console.log('Deu Certo1');
       return true;
     }
-  }
-}
-
-function cortarMensagem(mensagem) {
-  const play = `${prefix}play `;
-  const pause = `${prefix}pause `;
-  const resume = `${prefix}resume `;
-  const comando = mensagem.content;
-
-  if (comando.startsWith(play)) {
-    return mensagem.content.slice(play.length).split(' ');
-  }
-  if (comando.startsWith(pause)) {
-    return mensagem.content.slice(pause.length).split(' ');
-  }
-  if (comando.startsWith(resume)) {
-    return mensagem.content.slice(resume.length).split(' ');
   }
 }
 
@@ -145,7 +135,7 @@ function teste(mensagem) {
 }
 
 function searchYouTubeAsync(args, isPlaylist) {
-  if (isPlaylist) {
+  if (!isPlaylist) {
     return new Promise((resolve, reject) => {
       youtubeV3.search.list({
         part: 'snippet',
@@ -171,25 +161,48 @@ function searchYouTubeAsync(args, isPlaylist) {
         part: 'snippet',
         type: 'playlist',
         q: args,
-        maxResults: 50,
+        maxResults: 1,
       }, (err, response) => {
         if (err) {
           reject(err);
           return;
         }
-        const playlist = '';
-        for (var i = 0; i < response.data.items.size; i++) {
-          const song = {
-            title: response.data.items[i].snippet.title,
-            url: 'https://www.youtube.com/watch?v=' + response.data.items[i].id.videoId,
-            canal: response.data.items[i].snippet.channelTitle
-          }
-          playlist.push(song);
+        const song = {
+          title: response.data.items[0].snippet.title,
+          url: response.data.items[0].id.playlistId,
+          canal: response.data.items[0].snippet.channelTitle
         }
-        resolve(response ? playlist : null);
+
+        resolve(response ? song : null);
       })
     });
   }
+}
+
+async function searchYoutubeAsyncPlaylist(urlPlaylist) {
+  return new Promise((resolve, reject) => {
+    youtubeV3.playlistItems.list({
+      part: 'snippet',
+      playlistId: urlPlaylist,
+      maxResults: 100,
+    }, (err, response) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(response);
+      const playlist = [];
+      for (var i = 0; i < response.data.items.length; i++) {
+        const song = {
+          title: response.data.items[i].snippet.title,
+          url: 'https://www.youtube.com/watch?v=' + response.data.items[i].snippet.resourceId.videoId,
+          canal: response.data.items[i].snippet.channelTitle
+        }
+        playlist.push(song);
+      }
+      resolve(response ? playlist : null);
+    })
+  });
 }
 
 bot.login(token);

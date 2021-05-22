@@ -4,7 +4,7 @@ var Service = require('node-windows').Service;
 var svc = new Service({
   name:'GeromelBOT',
   description: 'Apenas uma descrição',
-  script: 'D:\\Programação\\BOTDiscord\\BOTGeromel\\index.js'
+  script: 'E:\\Programação\\BOTDiscord\\BOTGeromel\\index.js'
 });
 
 // Listen for the "install" event, which indicates the
