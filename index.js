@@ -4,13 +4,14 @@
  */
 const Discord = require('discord.js');
 const { prefix, prefix2, token } = require('./config.json');
-var bot = new Discord.Client();
+const bot = new Discord.Client();
 const YouTube = require("discord-youtube-api");
 const youtube = new YouTube("google api key");
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
 var youtubeV3 = google.youtube({ version: 'v3', auth: 'AIzaSyCyYXonS1F2g50nBXiPlBZXSZB9xLT_X2o' });
-let dispatcher;
+
+const queue = new Map();
 
 /**
  * Inicia o Bot e deixa em "Ready" como um listener e mostra no log que está funcionando.
@@ -32,77 +33,131 @@ bot.on("message", function (message) {
 
 
 function execucaoComandos(mensagem) {
-  const comando = mensagem.content;
+  const botQueue = queue.get(mensagem.guild.id);
   if (mensagem.content.startsWith(`${prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
   if (mensagem.content.startsWith(`${prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !addgs; !gs; !brackets; !comandos');
   if (mensagem.content.startsWith(`${prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
   if (mensagem.content.startsWith(`${prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
-  if (mensagem.content.startsWith(`${prefix}play`)) iniciarBusca(mensagem);
-  if (mensagem.content.startsWith(`${prefix}pause`)) pause(mensagem);
-  if (mensagem.content.startsWith(`${prefix}resume`)) resume(mensagem);
+  if (mensagem.content.startsWith(`${prefix}play`)) iniciarBusca(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}pause`)) pause(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}resume`)) resume(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}skip`)) skip(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}queue`)) queueCount(mensagem, botQueue);
   if (mensagem.content.startsWith(`${prefix}teste`)) teste(mensagem);
 }
 
-async function iniciarBusca(mensagem) {
+async function iniciarBusca(mensagem, botQueue) {
   const voiceChannel = mensagem.member.voice.channel;
-  const play = `${prefix}play `;
-  const pause = `${prefix}pause `;
-  const resume = `${prefix}resume `;
+  const comandoPlay = `${prefix}play `;
+  const comandoPause = `${prefix}pause `;
+  const comandoResume = `${prefix}resume `;
   var mensagemCortada = '';
 
-  if (mensagem.content.startsWith(play)) {
-    mensagemCortada = mensagem.content.slice(play.length).split(' ');
+  if (mensagem.content.startsWith(comandoPlay)) {
+    mensagemCortada = mensagem.content.slice(comandoPlay.length).split(' ');
   }
-  if (mensagem.content.startsWith(pause)) {
-    mensagemCortada = mensagem.content.slice(pause.length).split(' ');
+  if (mensagem.content.startsWith(comandoPause)) {
+    mensagemCortada = mensagem.content.slice(comandoPause.length).split(' ');
   }
-  if (mensagem.content.startsWith(resume)) {
-    mensagemCortada = mensagem.content.slice(resume.length).split(' ');
+  if (mensagem.content.startsWith(comandoResume)) {
+    mensagemCortada = mensagem.content.slice(comandoResume.length).split(' ');
   }
   if (!isEmUmCanalDeVoz(mensagem)) {
     return mensagem.reply('please join a voice channel first!');
   }
-  voiceChannel.join().then(async connection => {
-    let song;
+  let song;
+  if (verificaSeEPlaylist(mensagem.content)) {
+    let urlPlaylist;
+    urlPlaylist = await searchYouTubeAsync(mensagemCortada.join(' '), true);
+    song = await searchYoutubeAsyncPlaylist(urlPlaylist.url);
+  }
+  else {
+    song = await searchYouTubeAsync(mensagemCortada.join(' '), false);
+  }
+
+  if (!botQueue) {
+    const queueConstructor = {
+      txtChannel: mensagem.channel,
+      vChannel: voiceChannel,
+      connection: null,
+      songs: [],
+      volume: 10,
+      playing: true
+    };
+
+    queue.set(mensagem.guild.id, queueConstructor);
+
     if (verificaSeEPlaylist(mensagem.content)) {
-      let urlPlaylist;
-      urlPlaylist = await searchYouTubeAsync(mensagemCortada.join(' '), true);
-      song = await searchYoutubeAsyncPlaylist(urlPlaylist.url);
-      console.log(song);
-      mensagem.reply("Now Playing: " + song[0].title);
-      mensagem.channel.send("Canal: " + song[0].canal);
-      mensagem.channel.send(song[0].url);
-      mensagem.channel.send(song[0].length)
-      let stream = ytdl(song[0].url, { filter: 'audioonly' });
-      dispatcher = connection.play(stream);
+      for (var i = 0; i <= song.length; i++) {
+        queueConstructor.songs.push(song[i]);
+      }
+    } else {
+      queueConstructor.songs.push(song);
     }
-    else {
-      song = await searchYouTubeAsync(mensagemCortada.join(' '), false);
-      console.log(song);
-      mensagem.reply("Now Playing: " + song.title);
-      mensagem.channel.send("Canal: " + song.canal);
-      mensagem.channel.send(song.url);
-    }
-    let stream = ytdl(song.url, { filter: 'audioonly' });
-    dispatcher = connection.play(stream);
-    dispatcher.on('end', () => voiceChannel.leave());
-    isReady = true;
-  }).catch(e => { console.log(e) })
-}
 
-function pause(mensagem) {
-  if (!dispatcher.paused) {
-    dispatcher.pause(false);
-    mensagem.reply("Vídeo Pausado!");
+
+
+
+    try {
+      let connection = await voiceChannel.join();
+      queueConstructor.connection = connection;
+      play(mensagem.guild, queueConstructor.songs[0]);
+    } catch (err) {
+      console.error(err);
+      queue.delete(mensagem.guild.id);
+      return mensagem.reply(`Unable to join the voice chat ${err}`)
+    }
+  } else {
+    botQueue.songs.push(song);
+    return mensagem.reply(`The song has been added ${song.url}`);
   }
 }
 
-function resume(mensagem) {
-  if (dispatcher.paused) {
-    dispatcher.resume();
-    mensagem.reply("Vídeo Resumido!");
-    console.log(dispatcher);
+function pause(mensagem, botQueue) {
+  if (!botQueue.connection)
+    return mensagem.reply("Não há musica tocando agora!");
+  if (!botQueue.vChannel)
+    return mensagem.reply("Você precisa estar um voice chat primeiro!");
+  if (botQueue.connection.dispatcher.paused)
+    return mensagem.reply("A música já está pausada");
+  botQueue.connection.dispatcher.pause();
+  mensagem.reply("Música Pausada!");
+}
+
+function resume(mensagem, botQueue) {
+  if (!botQueue.connection)
+    return mensagem.reply("Não há musica tocando agora!");
+  if (!botQueue.vChannel)
+    return mensagem.reply("Você precisa estar um voice chat primeiro!");
+  if (botQueue.connection.dispatcher.resumed)
+    return mensagem.reply("A música já está tocando");
+  botQueue.connection.dispatcher.resume();
+  mensagem.reply("Música Retomada!");
+}
+
+function skip(mensagem, botQueue) {
+  if (!mensagem.member.voice.channel) {
+    return mensagem.reply("Você precisa estar um voice chat primeiro!")
   }
+  if (!botQueue) {
+    return mensagem.reply("Não há nada para skippar agora!");
+  }
+  botQueue.connection.dispatcher.end();
+}
+
+function play(guild, song) {
+  const botQueue = queue.get(guild.id)
+  if (!song) {
+    botQueue.vChannel.leave();
+    queue.delete(guild.id);
+    return;
+  }
+  const dispatcher = botQueue.connection.play(ytdl(song.url))
+    .on('finish', () => {
+      botQueue.songs.shift();;
+      play(guild, botQueue.songs[0]);
+    });
+  botQueue.txtChannel.send(`Now playing ${song.url}`);
 }
 
 function verificaSeEPlaylist(mensagem) {
@@ -114,6 +169,14 @@ function verificaSeEPlaylist(mensagem) {
       return true;
     }
   }
+}
+
+function queueCount(mensagem, botQueue) {
+  if (botQueue.songs.length == 0)
+    return mensagem.reply("Não há músicas na fila!");
+  if (!botQueue.vChannel)
+    return mensagem.reply("Você precisa estar um voice chat primeiro!");
+  mensagem.reply('Tamanho da fila: ' + botQueue.songs.length);
 }
 
 function isEmUmCanalDeVoz(mensagem) {
@@ -152,6 +215,7 @@ function searchYouTubeAsync(args, isPlaylist) {
           url: 'https://www.youtube.com/watch?v=' + response.data.items[0].id.videoId,
           canal: response.data.items[0].snippet.channelTitle
         }
+
         resolve(response ? song : null);
       })
     });
