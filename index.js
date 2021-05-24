@@ -35,14 +35,15 @@ bot.on("message", function (message) {
 function execucaoComandos(mensagem) {
   const botQueue = queue.get(mensagem.guild.id);
   if (mensagem.content.startsWith(`${prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
-  if (mensagem.content.startsWith(`${prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !addgs; !gs; !brackets; !comandos');
+  if (mensagem.content.startsWith(`${prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !play; !pausar; !resumir; !pular; !fila; !limparFila; !brackets; !comandos');
   if (mensagem.content.startsWith(`${prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
   if (mensagem.content.startsWith(`${prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
   if (mensagem.content.startsWith(`${prefix}play`)) iniciarBusca(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}pause`)) pause(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}resume`)) resume(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}skip`)) skip(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}queue`)) queueCount(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}pausar`)) pause(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}resumir`)) resume(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}pular`)) skip(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}fila`)) queueCount(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${prefix}limparFila`)) clearQueue(mensagem, botQueue);
   if (mensagem.content.startsWith(`${prefix}teste`)) teste(mensagem);
 }
 
@@ -177,6 +178,17 @@ function queueCount(mensagem, botQueue) {
   if (!botQueue.vChannel)
     return mensagem.reply("Você precisa estar um voice chat primeiro!");
   mensagem.reply('Tamanho da fila: ' + botQueue.songs.length);
+}
+
+function clearQueue(mensagem, botQueue){
+  if (botQueue.songs.length == 0)
+    return mensagem.reply("Não há músicas na fila!");
+  if (!botQueue.vChannel)
+    return mensagem.reply("Você precisa estar um voice chat primeiro!");
+    while (botQueue.songs.length) {
+      botQueue.songs.pop();
+    }
+  mensagem.reply("Fila Limpa!");
 }
 
 function isEmUmCanalDeVoz(mensagem) {
