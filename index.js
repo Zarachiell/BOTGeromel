@@ -166,7 +166,6 @@ function verificaSeEPlaylist(mensagem) {
   var mensagemCortada = mensagem.slice(comando.length).split('/');
   for (var i = 0; i < mensagemCortada.length; i++) {
     if (mensagemCortada[i].startsWith('playlist')) {
-      console.log('Deu Certo1');
       return true;
     }
   }
@@ -266,7 +265,6 @@ async function searchYoutubeAsyncPlaylist(urlPlaylist) {
         reject(err);
         return;
       }
-      console.log(response);
       const playlist = [];
       for (var i = 0; i < response.data.items.length; i++) {
         const song = {
