@@ -3,13 +3,16 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-const { prefix, prefix2, token, key } = require('./config.json');
+var botKey = process.env.BOT_KEY;
+var googleAPIKey = process.env.GOOGLE_KEY;
 const bot = new Discord.Client();
 const YouTube = require("discord-youtube-api");
-const youtube = new YouTube("google api key");
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
-var youtubeV3 = google.youtube({ version: 'v3', auth: key });
+var youtubeV3 = google.youtube({ version: 'v3', auth: googleAPIKey });
+
+var prefix = "!";
+var prefix2 = "*";
 
 const queue = new Map();
 
@@ -34,6 +37,7 @@ bot.on("message", function (message) {
 
 function execucaoComandos(mensagem) {
   const botQueue = queue.get(mensagem.guild.id);
+  console.log(config);
   if (mensagem.content.startsWith(`${prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
   if (mensagem.content.startsWith(`${prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !play; !pausar; !resumir; !pular; !fila; !limparFila; !brackets; !comandos');
   if (mensagem.content.startsWith(`${prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
@@ -282,4 +286,4 @@ async function searchYoutubeAsyncPlaylist(urlPlaylist) {
   });
 }
 
-bot.login(token);
+bot.login(botKey);
