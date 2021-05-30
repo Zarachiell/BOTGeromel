@@ -3,16 +3,11 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-var botKey = process.env.BOT_KEY;
-var googleAPIKey = process.env.GOOGLE_KEY;
+var config = require('./config/dev');
 const bot = new Discord.Client();
-const YouTube = require("discord-youtube-api");
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
-var youtubeV3 = google.youtube({ version: 'v3', auth: googleAPIKey });
-
-var prefix = "!";
-var prefix2 = "*";
+var youtubeV3 = google.youtube({ version: 'v3', auth: config.googleAPIKey });
 
 const queue = new Map();
 
@@ -37,24 +32,24 @@ bot.on("message", function (message) {
 
 function execucaoComandos(mensagem) {
   const botQueue = queue.get(mensagem.guild.id);
-  if (mensagem.content.startsWith(`${prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
-  if (mensagem.content.startsWith(`${prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !play; !pausar; !resumir; !pular; !fila; !limparFila; !brackets; !comandos');
-  if (mensagem.content.startsWith(`${prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
-  if (mensagem.content.startsWith(`${prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
-  if (mensagem.content.startsWith(`${prefix}play`)) iniciarBusca(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}pausar`)) pause(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}resumir`)) resume(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}pular`)) skip(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}fila`)) queueCount(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}limparFila`)) clearQueue(mensagem, botQueue);
-  if (mensagem.content.startsWith(`${prefix}teste`)) teste(mensagem);
+  if (mensagem.content.startsWith(`${config.prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
+  if (mensagem.content.startsWith(`${config.prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !play; !pausar; !resumir; !pular; !fila; !limparFila; !brackets; !comandos');
+  if (mensagem.content.startsWith(`${config.prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
+  if (mensagem.content.startsWith(`${config.prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
+  if (mensagem.content.startsWith(`${config.prefix}play`)) iniciarBusca(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}pausar`)) pause(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}resumir`)) resume(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}pular`)) skip(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}fila`)) queueCount(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}limparFila`)) clearQueue(mensagem, botQueue);
+  if (mensagem.content.startsWith(`${config.prefix}teste`)) teste(mensagem);
 }
 
 async function iniciarBusca(mensagem, botQueue) {
   const voiceChannel = mensagem.member.voice.channel;
-  const comandoPlay = `${prefix}play `;
-  const comandoPause = `${prefix}pause `;
-  const comandoResume = `${prefix}resume `;
+  const comandoPlay = `${config.prefix}play `;
+  const comandoPause = `${config.prefix}pause `;
+  const comandoResume = `${config.prefix}resume `;
   var mensagemCortada = '';
 
   if (mensagem.content.startsWith(comandoPlay)) {
@@ -166,7 +161,7 @@ function play(guild, song) {
 }
 
 function verificaSeEPlaylist(mensagem) {
-  const comando = `${prefix}play`;
+  const comando = `${config.prefix}play`;
   var mensagemCortada = mensagem.slice(comando.length).split('/');
   for (var i = 0; i < mensagemCortada.length; i++) {
     if (mensagemCortada[i].startsWith('playlist')) {
@@ -199,7 +194,7 @@ function isEmUmCanalDeVoz(mensagem) {
 }
 
 function teste(mensagem) {
-  const comando = `${prefix}teste`;
+  const comando = `${config.prefix}teste`;
   const mensagemCortada = mensagem.content.slice(comando.length).split('/');
   console.log(mensagemCortada);
 
@@ -285,4 +280,4 @@ async function searchYoutubeAsyncPlaylist(urlPlaylist) {
   });
 }
 
-bot.login(botKey);
+bot.login(config.botKey);
