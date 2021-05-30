@@ -3,13 +3,13 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-const { prefix, prefix2, token } = require('./config.json');
+const { prefix, prefix2, token, key } = require('./config.json');
 const bot = new Discord.Client();
 const YouTube = require("discord-youtube-api");
 const youtube = new YouTube("google api key");
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
-var youtubeV3 = google.youtube({ version: 'v3', auth: 'AIzaSyCyYXonS1F2g50nBXiPlBZXSZB9xLT_X2o' });
+var youtubeV3 = google.youtube({ version: 'v3', auth: key });
 
 const queue = new Map();
 
@@ -76,8 +76,8 @@ async function iniciarBusca(mensagem, botQueue) {
     song = await searchYouTubeAsync(mensagemCortada.join(' '), false);
   }
 
-  if(!song){
-    return mensagem.reply("Musica não encontrada!")
+  if(song.length === 0 ){
+    return mensagem.reply("Musica não encontrada");
   }
 
   if (!botQueue) {
@@ -99,9 +99,6 @@ async function iniciarBusca(mensagem, botQueue) {
     } else {
       queueConstructor.songs.push(song);
     }
-
-
-
 
     try {
       let connection = await voiceChannel.join();
@@ -225,12 +222,14 @@ function searchYouTubeAsync(args, isPlaylist) {
           reject(err);
           return;
         }
-        const song = {
-          title: response.data.items[0].snippet.title,
-          url: 'https://www.youtube.com/watch?v=' + response.data.items[0].id.videoId,
-          canal: response.data.items[0].snippet.channelTitle
+        var song = [];
+        if(response.data.items.length != 0){
+          song = {
+            title: response.data.items[0].snippet.title,
+            url: 'https://www.youtube.com/watch?v=' + response.data.items[0].id.videoId,
+            canal: response.data.items[0].snippet.channelTitle
+          }
         }
-
         resolve(response ? song : null);
       })
     });
