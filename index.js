@@ -76,6 +76,10 @@ async function iniciarBusca(mensagem, botQueue) {
     song = await searchYouTubeAsync(mensagemCortada.join(' '), false);
   }
 
+  if(!song){
+    return mensagem.reply("Musica não encontrada!")
+  }
+
   if (!botQueue) {
     const queueConstructor = {
       txtChannel: mensagem.channel,
