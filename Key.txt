@@ -1,6 +1,0 @@
-NjkxNzMyMDAxNzYxMzk0Nzg4.XnkQLg.1CIg_NnzfASg4lcxJaldIHs6NhE
-
-
-!addgs Ninja 269 301
-
-message.channel.send("CALA BOCA <@" + message.mentions.user + ">");
