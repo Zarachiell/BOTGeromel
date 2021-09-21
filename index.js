@@ -3,7 +3,7 @@
  * Author @Uganda
  */
 const Discord = require('discord.js');
-var config = require('./config/config');
+var config = require('./config/dev');
 const bot = new Discord.Client();
 const busca = require("./commands/iniciarBusca");
 const fila = require("./commands/fila");
