@@ -1,4 +1,4 @@
-var config = require('../config/dev');
+var config = require('../config/config');
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
 var youtubeV3 = google.youtube({ version: 'v3', auth: config.googleAPIKey });
