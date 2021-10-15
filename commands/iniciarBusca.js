@@ -166,7 +166,7 @@ module.exports = {
     },
 
     play: function (guild, song) {
-        const botQueue = generalQueue.get(guild.id)
+        var botQueue = generalQueue.get(guild.id)
         if (!song) {
             botQueue.vChannel.leave();
             botQueue.delete(guild.id);
