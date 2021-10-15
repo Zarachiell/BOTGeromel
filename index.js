@@ -34,7 +34,7 @@ function execucaoComandos(mensagem) {
   if (mensagem.content.startsWith(`${config.prefix}brackets`)) mensagem.channel.send("AP/DP Brackets", { files: ["https://cdn.discordapp.com/attachments/278999893903802369/694004818326323260/unknown.png"] });
   if (mensagem.content.startsWith(`${config.prefix}comandos`)) mensagem.channel.send('Lista de Comandos Disponíveis: !play; !pausar; !resumir; !pular; !fila; !limparFila; !brackets; !comandos');
   if (mensagem.content.startsWith(`${config.prefix}DALE`)) mensagem.channel.send('DALE', { tts: true });
- // if (mensagem.content.startsWith(`${config.prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
+ //if (mensagem.content.startsWith(`${config.prefix2}`)) mensagem.channel.send(mensagem.content.split("*"), { tts: true });
   if (mensagem.content.startsWith(`${config.prefix}play`)) botQueue = busca.iniciarBusca(mensagem, botQueue, queue);
  //if (mensagem.content.startsWith(`${config.prefix}pausar`)) pause(mensagem, botQueue);
  //if (mensagem.content.startsWith(`${config.prefix}resumir`)) resume(mensagem, botQueue);
