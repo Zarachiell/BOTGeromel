@@ -1,4 +1,4 @@
-var config = require('../config/dev');
+const config = require('../config/dev');
 const ytdl = require('ytdl-core');
 var { google } = require("googleapis");
 var youtubeV3 = google.youtube({ version: 'v3', auth: config.googleAPIKey });
@@ -64,7 +64,7 @@ module.exports = {
             try {
                 let connection = await voiceChannel.join();
                 queueConstructor.connection = connection;
-                this.play(mensagem.guild, queueConstructor.songs[0]);
+                await this.play(mensagem.guild, queueConstructor.songs[0]);
             } catch (err) {
                 console.error(err);
                 generalQueue.delete(mensagem.guild.id);
@@ -169,7 +169,7 @@ module.exports = {
         var botQueue = generalQueue.get(guild.id)
         if (!song) {
             botQueue.vChannel.leave();
-            botQueue.delete(guild.id);
+            generalQueue.delete(guild.id);
             return;
         }
         const dispatcher = botQueue.connection.play(ytdl(song.url))
