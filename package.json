@@ -14,7 +14,7 @@
     "google": "^0.6.0",
     "googleapis": "^73.0.0",
     "key": "^0.1.11",
-    "node-windows": "^1.0.0-beta.5",
+    "node-windows": "^1.0.0-beta.8",
     "opusscript": "^0.0.8",
     "yt-search": "^2.8.0",
     "ytdl-core": "^4.8.0"
