@@ -12,7 +12,7 @@ module.exports = {
 
   skip: function (mensagem, botQueue) {
     if (!mensagem.member.voice.channel) {
-      return mensagem.reply("Você precisa estar um voice chat primeiro!")
+      return mensagem.reply("Você precisa estar um  voice chat primeiro!")
     }
     if (!botQueue) {
       return mensagem.reply("Não há nada para skippar agora!");
