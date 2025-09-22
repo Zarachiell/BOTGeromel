@@ -6,7 +6,7 @@ module.exports = {
     if (botQueue.songs.length == 0)
       return mensagem.reply("Não há músicas na fila!");
     if (!botQueue.vChannel)
-      return mensagem.reply("Você precisa estar um voice chat primeiro!");
+      return mensagem.reply("Você precisa estar um  voice chat primeiro!");
     mensagem.reply('Tamanho da fila: ' + botQueue.songs.length);
   },
 
